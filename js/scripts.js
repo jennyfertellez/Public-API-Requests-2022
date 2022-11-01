@@ -12,8 +12,6 @@ let card = document.querySelector('.card');
 */
 const userData = (usersInfo) => {
 
-    let userHTML = '';
-
     usersInfo.forEach((user, index) => {
         employeeData.push(user);
         let name = user.name;
@@ -22,7 +20,7 @@ const userData = (usersInfo) => {
         let state = user.location.state;
         let picture = user.picture;
 
-        userHTML +=`
+        const userHTML =`
         <div class = "card" data-index = "${index}">
             <div class="card-img-container">
             <img class="card-img" src="${picture.medium}" alt="profile picture">
@@ -33,8 +31,9 @@ const userData = (usersInfo) => {
         <p class="card-text cap">${city} ${state}</p>
          </div>
         `
+        gallery.insertAdjacentHTML('beforeend', userHTML);
 })
-    gallery.innerHTML = userHTML;
+   
     console.log(employeeData)
 }
 // FETCH requests data from Random User API
