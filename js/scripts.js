@@ -6,15 +6,10 @@ const modalClose = document.querySelector(".modal-close");
 let employeeData = [];
 let card = document.querySelector('.card');
 
-//Gallery Container
-galleryContainer.innerHTML = `
-<form action="#" method="get">
-    <input type="search" id="search-input" class="search-input" placeholder="Search...">
-    <input type="submit" value="&#x1F50D;" id="search-submit" class="search-submit">
-</form> `;
-
-
-//Display 12 Random Users
+/** 
+* Display 12 Random Users
+* @param {usersInfo} grabs data from the API request
+*/
 const userData = (usersInfo) => {
 
     let userHTML = '';
